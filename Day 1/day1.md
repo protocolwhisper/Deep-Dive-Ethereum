@@ -7,7 +7,7 @@ Fundamentally, they are a hierarchical set of hash values that are constituted f
 Note: This data structure follows a log(n) behavior.
 
 <p align="center">
-  <img width="500" height="300" src="./Merkle3.png">
+  <img width="500" height="250" src="./Merkle3.png">
 </p>
 
 Example: Let's say that we receive the hash 0x1 and we want to know if it's part of the Merkle tree. In order to do this, we need to compute the Merkle root. For this, we need the neighbor hashes, as the image explains.
