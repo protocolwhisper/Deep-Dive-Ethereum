@@ -1,13 +1,15 @@
-# Sample Hardhat Project
+# Introduction to Ethereum Core Concepts and Whitelist with Merkle Trees Project
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+Welcome to this repository! In this repository, you'll find two main components in each day:
 
-Try running some of the following tasks:
+## 📚 Notes
 
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.ts
-```
+The `notes` folder contains lecture notes on various topics related to Ethereum and its core concepts. These notes are taken from various sources and compiled to provide an in-depth understanding of the subject matter.
+
+## 🌳 Whitelist with Merkle Trees Project
+
+The other folders in this repository are dedicated to setting up a project , in this case is called "Whitelist with Merkle Trees." This project demonstrates the implementation of a whitelist verification system using Merkle trees in Solidity.
+
+The project is organized into different folders for easy navigation and understanding.
+
+Feel free to explore and contribute to this repository. Enjoy learning!
