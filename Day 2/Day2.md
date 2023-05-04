@@ -7,9 +7,12 @@ The rule chooses the block at the tip of a branch, called the head block. For an
 
 **Examples of fork choice rules:**
 
-In proof of work, Ethereum and Bitcoin use the "heaviest chain rule." This means that the most recent block, representing the most work, is considered the head of the chain.
-In proof of stake, Ethereum uses the Casper FFG protocol, which has a rule called "follow the chain continuing the justified checkpoint of the greatest height." This means that nodes should choose the chain with the highest justified checkpoint.
-The Ethereum proof of stake LMD GHOST protocol uses the "Greediest Heaviest Observed Subtree" rule. This rule looks at the votes from validators for blocks and their children, and chooses the block with the most votes.
+* In proof of work, Ethereum and Bitcoin use the "heaviest chain rule." This means that the most recent block, representing the most work, is considered the head of the chain.
+
+* In proof of stake, Ethereum uses the Casper FFG protocol, which has a rule called "follow the chain continuing the justified checkpoint of the greatest height." This means that nodes should choose the chain with the highest justified checkpoint.
+
+* The Ethereum proof of stake LMD GHOST protocol uses the "Greediest Heaviest Observed Subtree" rule. This rule looks at the votes from validators for blocks and their children, and chooses the block with the most votes.
+
 Ethereum 2.0 combines the LMD GHOST protocol and the Casper FFG consensus mechanism. The LMD GHOST protocol validates blocks and determines the main chain, while Casper FFG adds finality to the consensus.
 
 # What is a checkpoint?
@@ -24,7 +27,11 @@ Sometimes the new block might be a descendant of another block in the block tree
 
 In this case, running the fork choice rule on the updated block tree might indicate a head block that's in another branch. When this happens, the node must perform a reorg, also known as a reversion. It will remove blocks that it had previously included in its chain and adopt the new head block of the other branch.
 
-#Insert pic#
+<p align="center">
+  <img width="550" height="250" src="./Blockprop.drawio.png">
+  <br>
+  <small>Fig1. Block propagation.</small>
+</p>
 
 **Scenario:**
 Let's assume that we have another block G that exists in the branch of C. Normally, we would ignore it, but in this case, the fork choice rule selects the G block as the best choice for the new head block. Then the blocks DEF need to be reverted.
@@ -46,9 +53,9 @@ An algorithm is said to be alive if "something good eventually happens." In bloc
 # We can't have both:
 The CAP theorem is a famous result in distributed systems theory, stating that no distributed system can have:
 
-*Consistency
-*Availability
-*Partition tolerance
+* Consistency
+* Availability
+* Partition tolerance
 
 Partition tolerance is the ability to function when communication between nodes is not reliable.
 
@@ -69,5 +76,9 @@ Ethereum prioritizes liveness, but unlike proof of work, it also offers a safety
 
 Safety in Ethereum is called "finality," and it's delivered by the Casper FFG mechanism. The idea is that all honest nodes will agree on blocks that they will never revert (checkpoints), and all their ancestor blocks are considered "final." You can consult any node, and you will get the same answer. Finality is a safety property: once finality has been conferred, nothing bad ever happens, as we mentioned before.
 
-#Insert pic
+<p align="center">
+  <img width="500" height="250" src="./Conclu.drawio.png">
+  <br>
+  <small>Fig2. Checkpoints in the chain.</small>
+</p>
 Finality in Ethereum 2.0 is an "economic finality" because, while it's theoretically possible to finalize two conflicting checkpoints, the cost associated with such an event is so high that it becomes extremely unlikely. This serves to incentivize nodes to behave well and avoid penalties.
