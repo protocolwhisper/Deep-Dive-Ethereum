@@ -50,7 +50,7 @@ An algorithm is said to be alive if "something good eventually happens." In bloc
 
 "Availability" is another way to look at this, meaning that if I send a valid transaction, it will eventually be included in the state.
 
-# We can't have both:
+# We can't have all:
 The CAP theorem is a famous result in distributed systems theory, stating that no distributed system can have:
 
 * Consistency
